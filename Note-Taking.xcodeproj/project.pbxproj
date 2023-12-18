@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CB1621D72B30B83300D2E6EF /* Note_TakingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1621D62B30B83300D2E6EF /* Note_TakingApp.swift */; };
-		CB1621D92B30B83300D2E6EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1621D82B30B83300D2E6EF /* ContentView.swift */; };
 		CB1621DB2B30B83400D2E6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1621DA2B30B83400D2E6EF /* Assets.xcassets */; };
 		CB1621DE2B30B83400D2E6EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1621DD2B30B83400D2E6EF /* Preview Assets.xcassets */; };
 		CB1621E82B30B83400D2E6EF /* Note_TakingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1621E72B30B83400D2E6EF /* Note_TakingTests.swift */; };
 		CB1621F22B30B83400D2E6EF /* Note_TakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1621F12B30B83400D2E6EF /* Note_TakingUITests.swift */; };
 		CB1621F42B30B83400D2E6EF /* Note_TakingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1621F32B30B83400D2E6EF /* Note_TakingUITestsLaunchTests.swift */; };
+		CB1622042B30C03900D2E6EF /* ListOfNotesViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1622032B30C03900D2E6EF /* ListOfNotesViews.swift */; };
+		CB1622072B30CE4800D2E6EF /* NoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1622062B30CE4800D2E6EF /* NoteDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		CB1621D32B30B83300D2E6EF /* Note-Taking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note-Taking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1621D62B30B83300D2E6EF /* Note_TakingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_TakingApp.swift; sourceTree = "<group>"; };
-		CB1621D82B30B83300D2E6EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB1621DA2B30B83400D2E6EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1621DD2B30B83400D2E6EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB1621E32B30B83400D2E6EF /* Note-TakingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Note-TakingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		CB1621ED2B30B83400D2E6EF /* Note-TakingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Note-TakingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1621F12B30B83400D2E6EF /* Note_TakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_TakingUITests.swift; sourceTree = "<group>"; };
 		CB1621F32B30B83400D2E6EF /* Note_TakingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_TakingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB1622032B30C03900D2E6EF /* ListOfNotesViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfNotesViews.swift; sourceTree = "<group>"; };
+		CB1622062B30CE4800D2E6EF /* NoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,11 @@
 		CB1621D52B30B83300D2E6EF /* Note-Taking */ = {
 			isa = PBXGroup;
 			children = (
+				CB1622052B30C1AD00D2E6EF /* Common */,
+				CB1622022B30BFEA00D2E6EF /* Views */,
+				CB1622012B30BFDD00D2E6EF /* ViewModels */,
+				CB1622002B30BFD100D2E6EF /* Models */,
 				CB1621D62B30B83300D2E6EF /* Note_TakingApp.swift */,
-				CB1621D82B30B83300D2E6EF /* ContentView.swift */,
 				CB1621DA2B30B83400D2E6EF /* Assets.xcassets */,
 				CB1621DC2B30B83400D2E6EF /* Preview Content */,
 			);
@@ -125,6 +130,36 @@
 				CB1621F32B30B83400D2E6EF /* Note_TakingUITestsLaunchTests.swift */,
 			);
 			path = "Note-TakingUITests";
+			sourceTree = "<group>";
+		};
+		CB1622002B30BFD100D2E6EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB1622012B30BFDD00D2E6EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CB1622022B30BFEA00D2E6EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB1622032B30C03900D2E6EF /* ListOfNotesViews.swift */,
+				CB1622062B30CE4800D2E6EF /* NoteDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB1622052B30C1AD00D2E6EF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1621D92B30B83300D2E6EF /* ContentView.swift in Sources */,
+				CB1622042B30C03900D2E6EF /* ListOfNotesViews.swift in Sources */,
 				CB1621D72B30B83300D2E6EF /* Note_TakingApp.swift in Sources */,
+				CB1622072B30CE4800D2E6EF /* NoteDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
