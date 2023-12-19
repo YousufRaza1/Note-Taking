@@ -11,7 +11,7 @@ import SwiftUI
 struct Note_TakingApp: App {
     var body: some Scene {
         WindowGroup {
-            ListOfNotesViews()
+            HomeScreen()
         }
     }
 }
