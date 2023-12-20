@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct NoteDetailsView: View {
+    @ObservedObject var note: Note
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Title")
+
+                    TextEditor(text: $note.title)
+                        .frame(height: 100)
+                        .cornerRadius(5)
+
+                    Text("Description")
+
+                    TextEditor(text: $note.text)
+                        .frame(height: 500)
+                }
+                .padding()
+            }
+        }
     }
 }
 
 #Preview {
-    NoteDetailsView()
+    NoteDetailsView(note: Note())
 }
