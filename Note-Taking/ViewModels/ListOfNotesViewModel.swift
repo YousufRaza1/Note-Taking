@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class ListOfNotesViewModel: ObservableObject {
+    @Published var notes: [Note] = []
+    
+    init() {
+        getNotes()
+    }
+    
+    func getNotes() {
+        //API called to get the remote notes
+        self.notes = Note.mockNotes()
+    }
+    
+}
