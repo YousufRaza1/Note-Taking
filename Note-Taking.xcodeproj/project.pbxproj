@@ -25,6 +25,7 @@
 		CB1622162B32048B00D2E6EF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1622152B32048B00D2E6EF /* Endpoint.swift */; };
 		CB1622182B3204C000D2E6EF /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1622172B3204C000D2E6EF /* NetworkCall.swift */; };
 		CBA3DE772B335E9200123EBC /* Color+ 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3DE762B335E9200123EBC /* Color+ 2.swift */; };
+		CBA3DE7A2B337D2500123EBC /* NoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3DE792B337D2500123EBC /* NoteItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		CB1622152B32048B00D2E6EF /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CB1622172B3204C000D2E6EF /* NetworkCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		CBA3DE762B335E9200123EBC /* Color+ 2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ 2.swift"; sourceTree = "<group>"; };
+		CBA3DE792B337D2500123EBC /* NoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemView.swift; sourceTree = "<group>"; };
 		DD8C4E78757A79FED1C65065 /* Pods-Note-Taking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Note-Taking.debug.xcconfig"; path = "Target Support Files/Pods-Note-Taking/Pods-Note-Taking.debug.xcconfig"; sourceTree = "<group>"; };
 		E883D8C33AD91F129B36DAA2 /* Pods_Note_TakingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Note_TakingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 		CB16220D2B32025200D2E6EF /* ListOfNotesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CBA3DE782B337CFF00123EBC /* Components */,
 				CB1622032B30C03900D2E6EF /* ListOfNotesViews.swift */,
 			);
 			path = ListOfNotesScreen;
@@ -235,6 +238,14 @@
 				CB1622062B30CE4800D2E6EF /* NoteDetailsView.swift */,
 			);
 			path = NoteDetailsScreen;
+			sourceTree = "<group>";
+		};
+		CBA3DE782B337CFF00123EBC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3DE792B337D2500123EBC /* NoteItemView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DA895187BA91F9382E1BC5D7 /* Frameworks */ = {
@@ -488,6 +499,7 @@
 				CB1622142B3203AC00D2E6EF /* NoteModel.swift in Sources */,
 				CB1622182B3204C000D2E6EF /* NetworkCall.swift in Sources */,
 				CB1622042B30C03900D2E6EF /* ListOfNotesViews.swift in Sources */,
+				CBA3DE7A2B337D2500123EBC /* NoteItemView.swift in Sources */,
 				CB1622162B32048B00D2E6EF /* Endpoint.swift in Sources */,
 				CB1621D72B30B83300D2E6EF /* Note_TakingApp.swift in Sources */,
 				CB1622072B30CE4800D2E6EF /* NoteDetailsView.swift in Sources */,

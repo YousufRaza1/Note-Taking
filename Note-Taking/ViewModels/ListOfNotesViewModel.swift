@@ -15,8 +15,23 @@ class ListOfNotesViewModel: ObservableObject {
     }
     
     func getNotes() {
-        //API called to get the remote notes
-        self.notes = Note.mockNotes()
+        // API called to get the remote notes
+        notes = Note.mockNotes()
     }
     
+    func sortBydateAssending() {
+        notes = notes.sorted { $0.date < $1.date }
+    }
+    
+    func sortBydateDescending() {
+        notes = notes.sorted { $0.date > $1.date }
+    }
+    
+    func sortByTitleDescending() {
+        notes = notes.sorted { $0.title > $1.title }
+    }
+    
+    func sortByTitleAssending() {
+        notes = notes.sorted { $0.date < $1.date }
+    }
 }

@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct NoteDetailsView: View {
-    @ObservedObject var note: Note
+    @Binding var note: Note
+    
+    init(note: Binding<Note>) {
+        self._note = note
+    }
 
     var body: some View {
         ZStack {
@@ -32,5 +36,5 @@ struct NoteDetailsView: View {
 }
 
 #Preview {
-    NoteDetailsView(note: Note())
+    NoteDetailsView(note: .constant(Note()))
 }

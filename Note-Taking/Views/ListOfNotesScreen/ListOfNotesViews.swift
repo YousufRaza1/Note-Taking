@@ -15,27 +15,11 @@ struct ListOfNotesViews: View {
             ZStack {
                 if !viewModel.notes.isEmpty {
                     List {
-                        ForEach(viewModel.notes) { note in
+                        ForEach($viewModel.notes) { note in
                             NavigationLink {
                                 NoteDetailsView(note: note)
                             } label: {
-                                VStack(alignment: .leading, spacing: 12) {
-                                    HStack {
-                                        Text("\(note.title)")
-                                            .font(.system(.headline, weight: .bold))
-
-                                        Spacer()
-
-                                        Text("\(note.date, style: Text.DateStyle.date)")
-                                            .font(.system(.footnote))
-                                            .multilineTextAlignment(.leading)
-                                            .lineLimit(1)
-                                    }
-
-                                    Text("\(note.text)")
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(2)
-                                }
+                               NoteItemView(note: note)
                             }
                             .padding()
                             .background(colorScheme == .dark ? Color.black : Color.white)
@@ -73,8 +57,12 @@ struct ListOfNotesViews: View {
                 }
 
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("📝")
-                        .font(.title)
+                    Menu("Filter By") {
+                        Button("Date Assending", action: viewModel.sortBydateAssending)
+                        Button("Date Desending", action: viewModel.sortBydateDescending)
+                        Button("Title Assending", action: viewModel.sortBydateAssending)
+                        Button("Title Desending", action: viewModel.sortByTitleDescending)
+                            }
                 }
             }
         }
@@ -83,8 +71,11 @@ struct ListOfNotesViews: View {
     private func removeRows(at offsets: IndexSet) {
         viewModel.notes.remove(atOffsets: offsets)
     }
+    
+   
 }
 
 #Preview {
     ListOfNotesViews()
 }
+
