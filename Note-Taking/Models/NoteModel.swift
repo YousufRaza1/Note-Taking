@@ -11,13 +11,13 @@ import SwiftUI
 class Note: ObservableObject, Identifiable {
     let id = UUID()
     @Published var title: String
-    @Published var attachment: [UIImage]
+    @Published var attachment: [ImageModel]
     @Published var text: String
     @Published var link: URL?
     @Published var date: Date
     init(
         title: String = "",
-        attachment: [UIImage] = [],
+        attachment: [ImageModel] = [],
         text: String = "",
         link: URL? = nil,
         date: Date = .now
@@ -30,13 +30,24 @@ class Note: ObservableObject, Identifiable {
     }
 }
 
+class ImageModel: Identifiable, Equatable, ObservableObject {
+    static func == (lhs: ImageModel, rhs: ImageModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    let id = UUID()
+    @Published var image: UIImage
+    init(image: UIImage) {
+        self.image = image
+    }
+}
+
 extension Note {
-    
-    //mock data we can use instant of api because we dont have appropate api
-    
+    // mock data we can use instant of api because we dont have appropate api
+
     static func mockNotes() -> [Note] {
         return [
-//            Note(
+            //            Note(
 //                title: "Meeting Notes",
 //                attachment: [],
 //                text: "Discussed project updates and timelines.",

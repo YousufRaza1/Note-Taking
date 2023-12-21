@@ -17,6 +17,7 @@ struct NoteItemView: View {
             HStack {
                 Text("\(note.title)")
                     .font(.system(.headline, weight: .bold))
+                    .lineLimit(1)
 
                 Spacer()
 
