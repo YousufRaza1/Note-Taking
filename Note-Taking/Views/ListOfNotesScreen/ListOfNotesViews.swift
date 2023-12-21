@@ -8,60 +8,61 @@
 import SwiftUI
 
 struct ListOfNotesViews: View {
-//    @State private var notes: [Note] = [
-//        //        Note(title: "Meeting Notes", attachment: nil, text: "Discussed project timelines and goals.", link: URL(string: "https://example.com/meeting")),
-////        Note(title: "Recipe Ideas", attachment: nil, text: "Consider trying the new pasta recipe with a twist.", link: nil),
-////        Note(title: "Vacation Plans", attachment: Data(), text: "Check flight availability and hotel options.", link: URL(string: "https://example.com/vacation")),
-////        // Add more notes as needed
-//    ]
-    @ObservedObject private var viewModel = ListOfNotesViewModel()
+    @Environment(\.colorScheme) var colorScheme
+    @StateObject private var viewModel = ListOfNotesViewModel()
     var body: some View {
         NavigationView {
             ZStack {
                 if !viewModel.notes.isEmpty {
                     List {
-                        ForEach(viewModel.notes) { note in
+                        ForEach($viewModel.notes) { note in
                             NavigationLink {
-                                NoteDetailsView()
+                                NoteDetailsView(note: note)
                             } label: {
-                                VStack(alignment: .leading, spacing: 12) {
-                                    HStack {
-                                        Text("\(note.title)")
-                                            .font(.system(.headline, weight: .bold))
-
-                                        Spacer()
-
-                                        Text("\(note.date, style: Text.DateStyle.date)")
-                                            .font(.system(.footnote))
-                                            .multilineTextAlignment(.leading)
-                                            .lineLimit(1)
-                                    }
-
-                                    Text("\(note.text)")
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(2)
-                                }
+                               NoteItemView(note: note)
                             }
                             .padding()
-                            .background(Color.white)
+                            .background(colorScheme == .dark ? Color.black : Color.white)
                             .cornerRadius(15)
-                            .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
+                            .shadow(
+                                color: colorScheme == .dark ? Color.white.opacity(0.2) : Color.black.opacity(0.2),
+                                radius: 7,
+                                x: 0,
+                                y: 2
+                            )
                         }
                         .onDelete(perform: removeRows)
                         .listRowSeparator(.hidden)
                     }
                     .listStyle(PlainListStyle())
                 } else {
-                    EmptyListScreen()
+                    EmptyListScreen(viewModel: viewModel)
                 }
             }
             .navigationTitle("Notes")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Press Me") {
-                        print("Pressed")
+                    Button {
+                        viewModel.notes.append(Note(title: "New Note", text: "Description"))
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .padding(6)
+                            .frame(width: 24, height: 24)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                            .foregroundColor(.white)
                     }
+                }
+
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu("Filter By") {
+                        Button("Date Assending", action: viewModel.sortBydateAssending)
+                        Button("Date Desending", action: viewModel.sortBydateDescending)
+                        Button("Title Assending", action: viewModel.sortBydateAssending)
+                        Button("Title Desending", action: viewModel.sortByTitleDescending)
+                            }
                 }
             }
         }
@@ -70,8 +71,11 @@ struct ListOfNotesViews: View {
     private func removeRows(at offsets: IndexSet) {
         viewModel.notes.remove(atOffsets: offsets)
     }
+    
+   
 }
 
 #Preview {
     ListOfNotesViews()
 }
+

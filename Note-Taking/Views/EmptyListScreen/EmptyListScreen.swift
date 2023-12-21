@@ -9,6 +9,11 @@ import SwiftUI
 
 struct EmptyListScreen: View {
     @State private var animate: Bool = false
+    @ObservedObject var viewModel: ListOfNotesViewModel
+
+    init(viewModel: ListOfNotesViewModel = ListOfNotesViewModel()) {
+        self.viewModel = viewModel
+    }
 
     private let colorFrom: Color = .blue.opacity(0.7)
     private let colorTo: Color = .blue
@@ -22,17 +27,16 @@ struct EmptyListScreen: View {
             Text(description)
                 .padding(.bottom)
 
-            NavigationLink(
-                destination: NoteDetailsView(),
-                label: {
-                    Text("Add new Notes 🥳")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, minHeight: 55)
-                        .background(animate ? colorFrom : colorTo)
-                        .cornerRadius(30)
-                }
-            )
+            Button(action: {
+                viewModel.notes.append(Note(title: "New Note", text: "Description"))
+            }, label: {
+                Text("Add new Notes 🥳")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, minHeight: 55)
+                    .background(animate ? colorFrom : colorTo)
+                    .cornerRadius(30)
+            })
             .padding(.horizontal, animate ? 30 : 45)
             .shadow(
                 color: animate ? colorFrom.opacity(0.9) : colorTo.opacity(0.7),
@@ -42,6 +46,7 @@ struct EmptyListScreen: View {
             )
             .scaleEffect(animate ? 1.1 : 1.0)
             .offset(y: animate ? -7 : 0)
+
             Spacer()
         }
         .multilineTextAlignment(.center)
