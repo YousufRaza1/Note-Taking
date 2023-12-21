@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A41F5992B3351A50046CD1E /* CDNoteModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A41F5972B3351A50046CD1E /* CDNoteModel.xcdatamodeld */; };
+		0A41F59B2B3353B30046CD1E /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41F59A2B3353B30046CD1E /* NoteEntity.swift */; };
+		0A41F59D2B33557A0046CD1E /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41F59C2B33557A0046CD1E /* UIImageTransformer.swift */; };
+		0A41F59F2B3358940046CD1E /* NoteEntityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41F59E2B3358940046CD1E /* NoteEntityViewModel.swift */; };
+		0A41F5A12B3359900046CD1E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41F5A02B3359900046CD1E /* CoreDataManager.swift */; };
 		35BA8FA313C13C059E0004E3 /* Pods_Note_Taking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF9F21B426B1FAF91D713CC /* Pods_Note_Taking.framework */; };
 		688DB8A0D3A21926D32EF2F3 /* Pods_Note_Taking_Note_TakingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC34750C891A1FDA8544E6F /* Pods_Note_Taking_Note_TakingUITests.framework */; };
 		B285AC07B45A49BE0CDACE7A /* Pods_Note_TakingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E883D8C33AD91F129B36DAA2 /* Pods_Note_TakingTests.framework */; };
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A41F5982B3351A50046CD1E /* CDNoteModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDNoteModel.xcdatamodel; sourceTree = "<group>"; };
+		0A41F59A2B3353B30046CD1E /* NoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
+		0A41F59C2B33557A0046CD1E /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
+		0A41F59E2B3358940046CD1E /* NoteEntityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntityViewModel.swift; sourceTree = "<group>"; };
+		0A41F5A02B3359900046CD1E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1C2A70F4D29C2E5D4BBD2E0C /* Pods-Note-Taking-Note-TakingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Note-Taking-Note-TakingUITests.release.xcconfig"; path = "Target Support Files/Pods-Note-Taking-Note-TakingUITests/Pods-Note-Taking-Note-TakingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F89971A18DDDBBB9CA34E54 /* Pods-Note-TakingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Note-TakingTests.debug.xcconfig"; path = "Target Support Files/Pods-Note-TakingTests/Pods-Note-TakingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AF9F21B426B1FAF91D713CC /* Pods_Note_Taking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Note_Taking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +119,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A41F5A22B3367CD0046CD1E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0A41F5972B3351A50046CD1E /* CDNoteModel.xcdatamodeld */,
+				0A41F59E2B3358940046CD1E /* NoteEntityViewModel.swift */,
+				0A41F59C2B33557A0046CD1E /* UIImageTransformer.swift */,
+				0A41F59A2B3353B30046CD1E /* NoteEntity.swift */,
+				0A41F5A02B3359900046CD1E /* CoreDataManager.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		7471A9880DDC158216EC10E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +169,11 @@
 		CB1621D52B30B83300D2E6EF /* Note-Taking */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				CBFF20D32B346EDF007F2C52 /* Info.plist */,
+=======
+				0A41F5A22B3367CD0046CD1E /* CoreData */,
+>>>>>>> 6965f5eea6eb10a4a76f98617d33e66d362a03e2
 				CB1622052B30C1AD00D2E6EF /* Common */,
 				CB1622022B30BFEA00D2E6EF /* Views */,
 				CB1622012B30BFDD00D2E6EF /* ViewModels */,
@@ -518,13 +544,18 @@
 				CBA3DE7A2B337D2500123EBC /* NoteItemView.swift in Sources */,
 				CBFF20D22B346B68007F2C52 /* AccessCameraView.swift in Sources */,
 				CB1622162B32048B00D2E6EF /* Endpoint.swift in Sources */,
+				0A41F59F2B3358940046CD1E /* NoteEntityViewModel.swift in Sources */,
+				0A41F5992B3351A50046CD1E /* CDNoteModel.xcdatamodeld in Sources */,
 				CB1621D72B30B83300D2E6EF /* Note_TakingApp.swift in Sources */,
 				CB1622072B30CE4800D2E6EF /* NoteDetailsView.swift in Sources */,
 				CB1622092B31F0BB00D2E6EF /* EmptyListScreen.swift in Sources */,
 				CBFF20CF2B346177007F2C52 /* UiImageView.swift in Sources */,
 				CBA3DE772B335E9200123EBC /* Color+ 2.swift in Sources */,
 				CB1622102B32031100D2E6EF /* ListOfNotesViewModel.swift in Sources */,
+				0A41F59B2B3353B30046CD1E /* NoteEntity.swift in Sources */,
 				CB1622122B32035000D2E6EF /* NotesDetailsViewModel.swift in Sources */,
+				0A41F5A12B3359900046CD1E /* CoreDataManager.swift in Sources */,
+				0A41F59D2B33557A0046CD1E /* UIImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +895,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A41F5972B3351A50046CD1E /* CDNoteModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A41F5982B3351A50046CD1E /* CDNoteModel.xcdatamodel */,
+			);
+			currentVersion = 0A41F5982B3351A50046CD1E /* CDNoteModel.xcdatamodel */;
+			path = CDNoteModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB1621CB2B30B83300D2E6EF /* Project object */;
 }
