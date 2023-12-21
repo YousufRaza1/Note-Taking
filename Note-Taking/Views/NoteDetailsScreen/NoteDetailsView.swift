@@ -51,6 +51,7 @@ struct NoteDetailsView: View {
                         .focused($isUsernameFocused)
 
                     ForEach($note.attachment) { uiImage in
+                        
                         UiImageView(
                             note: $note,
                             uiImage: uiImage

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ImageModelEntity" representedClassName="ImageModelEntity" syncable="YES">
+        <attribute name="attachment" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="attachment" inverseEntity="NoteEntity"/>
+    </entity>
+    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="attachment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageModelEntity" inverseName="origin" inverseEntity="ImageModelEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
