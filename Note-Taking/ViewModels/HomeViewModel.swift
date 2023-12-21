@@ -5,12 +5,6 @@
 //  Created by Yousuf on 12/20/23.
 //
 
-class Global {
-    static let shared = Global()
-    private init() {}
-    static let isAuthenticationEnabled: Bool = false
-}
-
 import Foundation
 import LocalAuthentication
 
@@ -23,17 +17,27 @@ class HomeViewModel: ObservableObject {
         var error: NSError?
 
         // check whether biometric authentication is possible
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        if context.canEvaluatePolicy(
+            .deviceOwnerAuthentication,
+            error: &error
+        ) {
             // it's possible, so go ahead and use it
             let reason = "We need to unlock your data."
 
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
+            context.evaluatePolicy(
+                .deviceOwnerAuthentication,
+                localizedReason: reason
+            ) { success, _ in
                 // authentication has now completed
                 if success {
+                    // authenticated successfully
+
                     DispatchQueue.main.async {
                         self.isAuthenticated = true
                     }
-                    // authenticated successfully
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.showSplashScreen = false
+                    }
                 } else {
                     print("authentication failed")
 
