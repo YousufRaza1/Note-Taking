@@ -8,7 +8,6 @@
 import PhotosUI
 import Swift
 import SwiftUI
-import UIKit
 
 struct NoteDetailsView: View {
     @FocusState private var isUsernameFocused: Bool
@@ -20,7 +19,6 @@ struct NoteDetailsView: View {
     @State private var showPhotoLibrary = false
     @State private var selectedPhoto: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
-    @State var loading = false
 
     init(note: Binding<Note>) {
         self._note = note
@@ -51,8 +49,6 @@ struct NoteDetailsView: View {
                     TextEditor(text: $note.text)
                         .frame(height: 500)
                         .focused($isUsernameFocused)
-
-                    Text("\(loading ? "True" : "False")")
 
                     ForEach($note.attachment) { uiImage in
                         UiImageView(
@@ -104,16 +100,19 @@ struct NoteDetailsView: View {
         )
         .onChange(of: selectedPhoto) {
             Task {
-                loading = true
                 if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {
                     if let uiImage = UIImage(data: data) {
                         note.attachment.append(ImageModel(image: uiImage))
-                        loading = false
                     }
                     selectedPhoto = nil
                 } else {
-                    //notify user
+                    // notify user
                 }
+            }
+        }
+        .fullScreenCover(isPresented: $showImageCapturer) {
+            ImageVideoCapturer(defaultCaptureMode: .photo) { image, _ in
+                note.attachment.append(ImageModel(image: image))
             }
         }
     }

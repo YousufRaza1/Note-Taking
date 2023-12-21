@@ -27,6 +27,7 @@
 		CBA3DE772B335E9200123EBC /* Color+ 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3DE762B335E9200123EBC /* Color+ 2.swift */; };
 		CBA3DE7A2B337D2500123EBC /* NoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA3DE792B337D2500123EBC /* NoteItemView.swift */; };
 		CBFF20CF2B346177007F2C52 /* UiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF20CE2B346177007F2C52 /* UiImageView.swift */; };
+		CBFF20D22B346B68007F2C52 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF20D12B346B68007F2C52 /* AccessCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		CBA3DE762B335E9200123EBC /* Color+ 2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ 2.swift"; sourceTree = "<group>"; };
 		CBA3DE792B337D2500123EBC /* NoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemView.swift; sourceTree = "<group>"; };
 		CBFF20CE2B346177007F2C52 /* UiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageView.swift; sourceTree = "<group>"; };
+		CBFF20D12B346B68007F2C52 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
+		CBFF20D32B346EDF007F2C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DD8C4E78757A79FED1C65065 /* Pods-Note-Taking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Note-Taking.debug.xcconfig"; path = "Target Support Files/Pods-Note-Taking/Pods-Note-Taking.debug.xcconfig"; sourceTree = "<group>"; };
 		E883D8C33AD91F129B36DAA2 /* Pods_Note_TakingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Note_TakingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +147,7 @@
 		CB1621D52B30B83300D2E6EF /* Note-Taking */ = {
 			isa = PBXGroup;
 			children = (
+				CBFF20D32B346EDF007F2C52 /* Info.plist */,
 				CB1622052B30C1AD00D2E6EF /* Common */,
 				CB1622022B30BFEA00D2E6EF /* Views */,
 				CB1622012B30BFDD00D2E6EF /* ViewModels */,
@@ -213,6 +217,7 @@
 				CB1622172B3204C000D2E6EF /* NetworkCall.swift */,
 				CBA3DE762B335E9200123EBC /* Color+ 2.swift */,
 				CB1622152B32048B00D2E6EF /* Endpoint.swift */,
+				CBFF20D12B346B68007F2C52 /* AccessCameraView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				CB1622182B3204C000D2E6EF /* NetworkCall.swift in Sources */,
 				CB1622042B30C03900D2E6EF /* ListOfNotesViews.swift in Sources */,
 				CBA3DE7A2B337D2500123EBC /* NoteItemView.swift in Sources */,
+				CBFF20D22B346B68007F2C52 /* AccessCameraView.swift in Sources */,
 				CB1622162B32048B00D2E6EF /* Endpoint.swift in Sources */,
 				CB1621D72B30B83300D2E6EF /* Note_TakingApp.swift in Sources */,
 				CB1622072B30CE4800D2E6EF /* NoteDetailsView.swift in Sources */,
@@ -686,6 +692,8 @@
 				DEVELOPMENT_TEAM = 54GH4MF3D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Note-Taking/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -716,6 +724,8 @@
 				DEVELOPMENT_TEAM = 54GH4MF3D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Note-Taking/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
